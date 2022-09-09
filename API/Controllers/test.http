@@ -1,0 +1,38 @@
+@host = https://localhost:7269/api
+
+@authorization = Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsaXNhIiwibmJmIjoxNjYwNDIxMzQ3LCJleHAiOjE2NjA1MDc3NDcsImlhdCI6MTY2MDQyMTM0N30.-FkAZEydJsN6tOfms0d_2AaqS3fMRNCGIfiq0frH0Zh7c4rg8pgKns26CrgWQX-bBMzAZrSUqox3i5rAoIh-5w
+
+###get user lisa
+GET {{host}}/Users/lisa
+{{authorization}}
+
+### Get Users
+GET {{host}}/Users
+{{authorization}}
+
+### Get Users
+GET {{host}}/Users?pageNumber=1&pageSize=10
+{{authorization}}
+
+#a# Register.
+POST {{host}}/account/register?username=sam&password=password
+
+
+### Register
+POST {{host}}/account/register
+Content-Type: application/json
+
+{
+    "username":"don",
+    "password":"password"
+}
+
+### Login Request
+POST {{host}}/account/login
+Content-Type: application/json
+
+{
+    "username":"lisa",
+    "password":"password"
+}
+
